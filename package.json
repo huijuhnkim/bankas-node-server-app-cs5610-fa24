@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "name": "bankas-node-server-app-cs5610-fa24",
+  "version": "1.0.0",
+  "description": "HTTP Server integrating with a React front end",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hui Juhn Kim",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
