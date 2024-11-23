@@ -15,7 +15,7 @@ app.use(cors({
 }));
 
 const sessionOptions = {
-    secret: process.env.SESSION_SECRET || "kanbas",
+    secret: "kanbas",
     resave: false,
     saveUninitialized: false,
 }
