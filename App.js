@@ -21,7 +21,7 @@ const sessionOptions = {
 }
 
 if (process.env.NODE_ENV !== "development") {
-    sessionOption.proxy = true;
+    sessionOptions.proxy = true;
     sessionOptions.cookie = {
         sameSite: "none",
         secure: true,
