@@ -15,3 +15,5 @@ export function deleteAssignment(assignmentId) {
     const { assignments } = database;
     database.assignments = assignments.filter((assignment) => assignment._id !== assignmentId);
 }
+
+// push
