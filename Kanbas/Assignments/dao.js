@@ -16,4 +16,11 @@ export function deleteAssignment(assignmentId) {
     database.assignments = assignments.filter((assignment) => assignment._id !== assignmentId);
 }
 
+export function updateAssignment(assignmentId, assignmentUpdates) {
+    const { assignments } = database;
+    const assignment = assignments.find((assignment) => assignment._id === assignmentId);
+    Object.assign(assignment, assignmentUpdates);
+    return assignment;
+}
+
 // push
