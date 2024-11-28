@@ -6,7 +6,18 @@ export function findAssignmentsForCourse(courseId) {
 }
 
 export function createAssignment(course) {
-    const newAssignment = {...course, _id:Date.now().toString()};
+    const newAssignment = {
+        ...course,
+        _id:Date.now().toString(),
+        course: "RS101",
+        modules: "Multiple Modules",
+        description: "Enter assignment description here.",
+        availableFrom: "2024-01-01T23:59",
+        availableUntil: "2024-01-01T23:59",
+        due: "2024-01-01T23:59",
+        points: "100"
+
+    };
     database.assignments = [...database.assignments, newAssignment];
     return newAssignment;
 }
