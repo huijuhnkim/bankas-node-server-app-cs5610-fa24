@@ -6,7 +6,7 @@ import cors from "cors";
 import UserRoutes from "./Kanbas/Users/routes.js";
 import CourseRoutes from "./Kanbas/Courses/routes.js";
 import ModuleRoutes from "./Kanbas/Modules/routes.js";
-
+import "dotenv/config";
 
 const app = express();
 app.use(cors({
@@ -15,18 +15,18 @@ app.use(cors({
 }));
 
 const sessionOptions = {
-    secret: "any string",
+    secret: process.env.SESSION_SECRET || "kanbas",
     resave: false,
     saveUninitialized: false,
 }
 
-if (process.env.NODE_ENV === "development") {
-    sessionOption.proxy = true;
+if (process.env.NODE_ENV !== "development") {
+    sessionOptions.proxy = true;
     sessionOptions.cookie = {
         sameSite: "none",
         secure: true,
         domain: process.env.NODE_SERVER_DOMAIN,
-    }
+    };
 }
 
 app.use(session(sessionOptions));
