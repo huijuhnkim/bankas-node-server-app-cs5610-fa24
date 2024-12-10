@@ -33,5 +33,3 @@ export function updateAssignment(assignmentId, assignmentUpdates) {
     Object.assign(assignment, assignmentUpdates);
     return assignment;
 }
-
-// push
