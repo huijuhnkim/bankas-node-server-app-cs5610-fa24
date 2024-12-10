@@ -10,6 +10,7 @@ import UserRoutes from "./Kanbas/Users/routes.js";
 import CourseRoutes from "./Kanbas/Courses/routes.js";
 import ModuleRoutes from "./Kanbas/Modules/routes.js";
 import AssignmentsRoutes from "./Kanbas/Assignments/routes.js";
+import EnrollmentRoutes from "./Kanbas/Enrollments/routes.js";
 
 const CONNECTION_STRING = process.env.MONGO_CONNECTION_STRING;
 mongoose.connect(CONNECTION_STRING);
@@ -45,7 +46,8 @@ UserRoutes(app)
 CourseRoutes(app)
 ModuleRoutes(app)
 AssignmentsRoutes(app)
+EnrollmentRoutes(app)
 
 app.listen(process.env.PORT || "4000");
 
-// attempt #3!
+// starting enrollment feature!

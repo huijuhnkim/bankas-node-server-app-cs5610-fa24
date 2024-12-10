@@ -51,7 +51,7 @@ export default function CourseRoutes(app) {
             ...req.body,
             course: courseId,
         }
-        const newAssignment = assignmentsDao.createAssignment(assignment);
+        const newAssignment = assignmentsDao.createresAssignment(assignment);
         res.send(newAssignment);
     })
 }
