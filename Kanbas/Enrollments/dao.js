@@ -14,9 +14,11 @@ export function enrollUserInCourse(userId, courseId) {
     return newEnrollment;
 }
 
-export function excludeUserInCourse(userId, courseId) {
-    const { enrollments } = Database;
-    enrollments.filter((enrollment) => enrollment.user !== userId && enrollment.course !== courseId);
+export function unenrollUserFromCourse(userId, courseId) {
+    Database.enrollments = Database.enrollments.filter(
+        (enrollment) => !(enrollment.user === userId && enrollment.course === courseId)
+    );
+    return { userId, courseId };
 }
 
 

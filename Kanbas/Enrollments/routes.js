@@ -8,10 +8,6 @@ export default function EnrollmentRoutes(app) {
     )
 
     app.post("/api/enrollments/:courseId", (req, res) => {
-        // console.log("Full Session:", req.session);
-        // console.log("Current User from Session:", req.session.currentUser);
-        // console.log("Request Body:", req.body);
-        // console.log("Request Params:", req.params);
         const currentUser = req.session["currentUser"]
         const { courseId } = req.params;
         if (currentUser) {
@@ -21,4 +17,17 @@ export default function EnrollmentRoutes(app) {
             res.status(401).json({ message: "User not authenticated" });
         }
     })
+
+    app.delete("/api/enrollments/:courseId", (req, res) => {
+        const currentUser = req.session["currentUser"];
+        const { courseId } = req.params;
+
+        if (currentUser) {
+            const result = dao.unenrollUserFromCourse(currentUser._id, courseId);
+            res.json(result);
+        } else {
+            res.status(401).json({ message: "User not authenticated" });
+        }
+    });
+
 }
