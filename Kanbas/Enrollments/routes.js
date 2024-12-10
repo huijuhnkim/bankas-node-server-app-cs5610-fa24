@@ -29,5 +29,4 @@ export default function EnrollmentRoutes(app) {
             res.status(401).json({ message: "User not authenticated" });
         }
     });
-
 }
